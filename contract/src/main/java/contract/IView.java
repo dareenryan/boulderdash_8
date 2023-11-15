@@ -3,7 +3,7 @@ package contract;
 /**
  * The Interface IView.
  *
- * @author Jean-Aymeric Diet
+ * @author Group 8
  */
 public interface IView {
 
@@ -14,4 +14,6 @@ public interface IView {
 	 *          the message
 	 */
 	void printMessage(final String message);
+
+	void followMyPlayer();
 }

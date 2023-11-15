@@ -3,20 +3,24 @@ package contract;
 /**
  * The Interface IController.
  *
- * @author Jean-Aymeric Diet
+ * @author Group 8
  */
 public interface IController {
 
 	/**
 	 * Control.
 	 */
-	public void control();
+	//public void control();
 
 	/**
-	 * Order perform.
-	 *
-	 * @param controllerOrder
-	 *          the controller order
+	 * Play.
 	 */
-	public void orderPerform(ControllerOrder controllerOrder);
+	void play() throws InterruptedException;
+
+	/**
+	 * Gets the order performer.
+	 *
+	 * @return the order performer
+	 */
+	IOrderPerformer getOrderPerformer();
 }

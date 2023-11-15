@@ -7,6 +7,12 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+/**
+ * <h1> The View Frame Class</h1>
+ *
+ * @author Group 8
+ */
+
 public class ViewFrame extends JFrame implements KeyListener {
 
 	private static final long serialVersionUID = -697358409737458175L;
@@ -63,12 +69,14 @@ public class ViewFrame extends JFrame implements KeyListener {
 		this.displayFrame = displayFrame;
 	}
 
-	public final void addPawn(final IPawn pawn) {
+	/*public final void addPawn(final IPawn pawn) {
 		final ViewPanel viewPanel = new ViewPanel(pawn);
 		this.setContentPane(viewPanel);
 		this.setSize(pawn.getWidth(), pawn.getHeight());
 		this.setLocationRelativeTo(null);
-	}
+	}*/
+
+
 
 	public final void removeAllPawns() {
 		this.setContentPane(new JPanel());

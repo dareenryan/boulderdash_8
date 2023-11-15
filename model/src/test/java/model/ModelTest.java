@@ -37,7 +37,7 @@ public class ModelTest {
     }
 
     /**
-     * Test method for {@link model.Model#loadHelloWorld(java.lang.String)}.
+     * Test method for {@link Model#loadHelloWorld(String)}.
      */
     @Test
     public void testGetMessageString() {

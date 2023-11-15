@@ -1,11 +1,10 @@
 package view;
 
-import contract.ControllerOrder;
-import contract.IOrderPerformer;
-import contract.IView;
-import entity.IMap;
+import contract.*;
 import fr.exia.showboard.BoardFrame;
-import model.IMobile;
+import contract.IMobile;
+import contract.IMap;
+import contract.IView;
 
 import javax.swing.*;
 import java.awt.*;
@@ -79,7 +78,8 @@ public class View implements Runnable, KeyListener, IView {
 	 * (non-Javadoc)
 	 * @see fr.exia.boulderdash.contract.intview.IView#displayMessage(java.lang.String)
 	 */
-	@Override
+
+	//@Override
 	public final void displayMessage(final String message) {
 		JOptionPane.showMessageDialog(null, message);
 		System.exit(0);
@@ -142,31 +142,31 @@ public class View implements Runnable, KeyListener, IView {
 	 * @param keyCode the key code
 	 * @return the user order
 	 */
-	private ControllerOrder keyCodeToUserOrder(final int keyCode) {
-		ControllerOrder ControllerOrder = null;
+	private UserOrder keyCodeToUserOrder(final int keyCode) {
+		UserOrder UserOrder = null;
 		switch (keyCode) {
 			case KeyEvent.VK_RIGHT:
-				ControllerOrder = ControllerOrder.RIGHT;
+				UserOrder = UserOrder.RIGHT;
 				refresh();
 				break;
 			case KeyEvent.VK_LEFT:
-				ControllerOrder = ControllerOrder.LEFT;
+				UserOrder = UserOrder.LEFT;
 				refresh();
 				break;
 			case KeyEvent.VK_DOWN:
-				ControllerOrder = ControllerOrder.DOWN;
+				UserOrder = UserOrder.DOWN;
 				refresh();
 				break;
 			case KeyEvent.VK_UP:
-				ControllerOrder = ControllerOrder.UP;
+				UserOrder = UserOrder.UP;
 				refresh();
 				break;
 			default:
-				ControllerOrder = ControllerOrder.NOP;
+				UserOrder = UserOrder.NOP;
 				refresh();
 				break;
 		}
-		return ControllerOrder;
+		return UserOrder;
 	}
 
 	/*
@@ -200,7 +200,7 @@ public class View implements Runnable, KeyListener, IView {
 	 * (non-Javadoc)
 	 * @see fr.exia.boulderdash.contract.intview.IView#followMyvehicle()
 	 */
-	@Override
+	//@Override
 	public final void followMyPlayer() {
 		this.getCloseView().y = this.getMyPlayer().getY() - this.getMap().getHeight() / 2;
 		this.getCloseView().x = this.getMyPlayer().getX() - this.getMap().getHeight() / 2;

@@ -5,6 +5,11 @@ import fr.exia.showboard.IPawn;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * <h1> The View Panel Class</h1>
+ *
+ * @author Group 8
+ */
 public class ViewPanel extends JPanel {
 
 	private static final long serialVersionUID = -998294702363713521L;
