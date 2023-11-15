@@ -1,4 +1,4 @@
-package model.sprite;
+package model.allElements;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -28,10 +28,11 @@ public class SpriteSheetCutter {
     public static BufferedImage getSprite(int xGrid, int yGrid, String file) {
 
         if (spriteSheet == null) {
+            System.out.println("file : " +file);
             spriteSheet = loadSprite(file);
         }
 
-//voir la doc de getSubImage et de ses paramètres
+//il faudrait voir la doc de getSubImage et de ses paramètres
 
         return spriteSheet.getSubimage(xGrid * TILE_SIZE, yGrid * TILE_SIZE, TILE_SIZE, TILE_SIZE);
     }
