@@ -8,6 +8,7 @@ import contract.IBoulderDashController;
 import contract.IController;
 import controller.BoulderDashController;
 import model.BoulderDashModel;
+import model.dao.DBConnection;
 import view.BoulderDashView;
 
 import java.io.IOException;
@@ -34,6 +35,9 @@ public abstract class Main {
         final BoulderDashView view = new BoulderDashView(BoulderDashModel.getMap());
         //final IBoulderDashController controller = new BoulderDashController(view, model);
         //view.setOrderPerformer(controller.getOrderPerformer());
+
+        DBConnection db = new DBConnection();
+        db.insertEntity();
 
         view.runView();
     }
