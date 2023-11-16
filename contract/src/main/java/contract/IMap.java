@@ -53,4 +53,6 @@ public interface IMap {
     Observable getObservable();
 
     BufferedImage[][] getSymbolonTheMap();
+
+    IMobile getPlayer();
 }

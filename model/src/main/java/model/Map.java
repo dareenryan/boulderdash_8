@@ -24,6 +24,11 @@ public class Map extends Observable implements IMap {
 
     private BufferedImage[][] SymbolonTheMap;
 
+    private Player player;
+
+    public Player getPlayer() {
+        return player;
+    }
 
     public void setWidth(int width) { this.width = width; }
     public int getWidth() { return width; }
@@ -57,7 +62,7 @@ public class Map extends Observable implements IMap {
                 System.out.println("X = " + x);
                 char c = line.toCharArray()[x];
                 System.out.println("y =" + y);
-                BufferedImage elem = charToSprite(c);
+                BufferedImage elem = charToSprite(c, x, y);
                 Element[x][y] = elem;
             }
             y++;
@@ -66,7 +71,7 @@ public class Map extends Observable implements IMap {
         buffer.close();
         return Element;
     }
-    public static BufferedImage charToSprite(char fchar){
+    public BufferedImage charToSprite(char fchar, int x, int y){
         BufferedImage accSprite = null;
         switch(fchar){
             case 'B':
@@ -88,6 +93,11 @@ public class Map extends Observable implements IMap {
             case 'T':
                 accSprite = new Sand().getSprite().getSymbol();
                 break;
+            case 'J':
+                this.player = new Player(0,0);
+                accSprite = this.player.getSprite().getSymbol();
+                this.player.setX(x);
+                this.player.setY(y);
         }
         return accSprite;
     }

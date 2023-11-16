@@ -17,7 +17,11 @@ public class Player extends MobileElem implements IMobile {
     private static Sprite spritePlayerD = new Sprite(0,4,"playerSprites.png");
 
 
-    public Player(final int x, final int y, final Map map) { super(spritePlayer, Permeability.BLOCKING, map, x, y); }
+    public Player(final int x, final int y) { super(spritePlayer, Permeability.BLOCKING, x, y); }
+
+    public Player(){
+        super(spritePlayer, Permeability.BLOCKING);
+    }
 
     @Override
     public Sprite getSprite(){

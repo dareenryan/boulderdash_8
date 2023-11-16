@@ -19,12 +19,6 @@ import java.io.IOException;
  */
 public abstract class Main {
 
-    /** The X starting position */
-    private static final int startX = 20;
-
-    /** The Y starting position */
-    private static final int startY = 20;
-
     /**
      * The main method.
      *
@@ -36,9 +30,9 @@ public abstract class Main {
      *            the interrupted exception
      */
     public static void main(final String[] args) throws IOException, InterruptedException {
-        final BoulderDashModel model = new BoulderDashModel("maps_txt/MAP1.txt", startX,startY);
-        final BoulderDashView view = new BoulderDashView(BoulderDashModel.getMap(), BoulderDashModel.getMyHero());
-        final IBoulderDashController controller = new BoulderDashController(view, model);
+        final BoulderDashModel model = new BoulderDashModel("maps_txt/MAP1.txt");
+        final BoulderDashView view = new BoulderDashView(BoulderDashModel.getMap());
+        //final IBoulderDashController controller = new BoulderDashController(view, model);
         //view.setOrderPerformer(controller.getOrderPerformer());
 
         view.runView();

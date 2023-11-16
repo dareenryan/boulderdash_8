@@ -9,42 +9,36 @@ import java.awt.*;
 
 public class MobileElem extends Element {
     private Point position;
-    private Map map;
-    public MobileElem(final Sprite sprite, final Permeability permeability, final Map map, int x, int y) {
+    public MobileElem(final Sprite sprite, final Permeability permeability, int x, int y) {
         super(sprite, permeability);
-        this.setMap(map);
         this.position = new Point(x,y);
     }
 
+    public MobileElem(final Sprite sprite, final Permeability permeability){
+        super(sprite, permeability);
+    }
+
     public void moveUp() {
+        System.out.println("okTest");
         this.setY(this.getY() - 1);
-        //this.setHasMoved();
     }
 
     public void moveLeft() {
+        System.out.println("okTest");
         this.setX(this.getX() - 1);
-        //this.setHasMoved();
+        System.out.println(this.getX());
     }
 
     public void moveDown() {
+        System.out.println("okTest");
         this.setY(this.getY() + 1);
-        //this.setHasMoved();
     }
 
     public void moveRight() {
+        System.out.println("okTest");
         this.setX(this.getX() + 1);
-        //this.setHasMoved();
-    }
+        System.out.println(this.getX());
 
-    public void doNothing() {
-        this.setHasMoved();
-    }
-
-    /**
-     * Sets the has moved.
-     */
-    private void setHasMoved() {
-        this.getMap().setMobileHasChanged();
     }
 
     public final int getX() {
@@ -90,33 +84,4 @@ public class MobileElem extends Element {
         this.getPosition().y = y;
         //this.getPosition().y = (y + this.getMap().getHeight()) % this.getMap().getHeight();
     }
-
-    /**
-     * Gets the map.
-     *
-     * @return the map
-     */
-    public Map getMap() {
-        return this.map;
-    }
-
-    /**
-     * Sets the map.
-     *
-     * @param map
-     *            the new map
-     */
-    private void setMap(final Map map) {
-        this.map = map;
-    }
-
-    /*public Boolean isAlive() {
-        return this.alive;
-    }*/
-
-    /**
-     * Dies.
-     */
-
-
 }

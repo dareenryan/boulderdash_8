@@ -1,5 +1,7 @@
 package contract;
 
+import java.awt.*;
+
 
 public interface IMobile {
 
@@ -23,10 +25,7 @@ public interface IMobile {
      */
     void moveRight();
 
-    /**
-     * Do nothing.
-     */
-    void doNothing();
-
     ISprite getSprite();
+
+    Point getPosition();
 }

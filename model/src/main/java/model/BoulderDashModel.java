@@ -25,13 +25,9 @@ public class BoulderDashModel implements IBoulderDashModel {
      * Constructor
      * @param fileName
      *          name of th file
-     * @param myHeroStartX
-     *
-     * @param myHeroStartY
      */
-    public BoulderDashModel(final String fileName,final int myHeroStartX, final int myHeroStartY) throws IOException{
+    public BoulderDashModel(final String fileName) throws IOException{
         this.setMap(new Map(fileName));
-        this.setMyHero(new Player(myHeroStartX, myHeroStartY, this.getMap()));
     }
 
     public static Map getMap(){
