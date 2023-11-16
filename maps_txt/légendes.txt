@@ -1,0 +1,7 @@
+p:pierre
+M: mur
+j: joueur
+t:terre
+d:diamant
+s:monstre
+b:sortie

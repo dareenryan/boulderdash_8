@@ -4,12 +4,11 @@
  */
 package main;
 
-import contract.IBoulderDashModel;
+import contract.IBoulderDashController;
 import contract.IController;
-import contract.UserOrder;
-import controller.Controller;
+import controller.BoulderDashController;
 import model.BoulderDashModel;
-import view.View;
+import view.BoulderDashView;
 
 import java.io.IOException;
 
@@ -21,10 +20,10 @@ import java.io.IOException;
 public abstract class Main {
 
     /** The X starting position */
-    private static final int startX = 4;
+    private static final int startX = 20;
 
     /** The Y starting position */
-    private static final int startY = 6;
+    private static final int startY = 20;
 
     /**
      * The main method.
@@ -37,11 +36,11 @@ public abstract class Main {
      *            the interrupted exception
      */
     public static void main(final String[] args) throws IOException, InterruptedException {
-        final IBoulderDashModel model = new BoulderDashModel("Map.txt", startX,startY);
-        final View view = new View(model.getMap(), model.getMyHero());
-        final IController controller = new Controller(view, model);
-        view.setOrderPerformer(controller.getOrderPerformer());
+        final BoulderDashModel model = new BoulderDashModel("maps_txt/MAP1.txt", startX,startY);
+        final BoulderDashView view = new BoulderDashView(BoulderDashModel.getMap(), BoulderDashModel.getMyHero());
+        final IBoulderDashController controller = new BoulderDashController(view, model);
+        //view.setOrderPerformer(controller.getOrderPerformer());
 
-        controller.play();
+        view.runView();
     }
 }

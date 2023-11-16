@@ -11,8 +11,8 @@ public class Rock extends StaticElem{
     public Rock() {
         super(SpriteRock, Permeability.BLOCKING);
     }
-    public BufferedImage getSprite(){
-        return SpriteRock.loadSprite();
+    public Sprite getSprite(){
+        return SpriteRock;
     }
 
 }

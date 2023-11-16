@@ -12,7 +12,7 @@ public class Empty extends StaticElem {
         super(SpriteEmpty, Permeability.BLOCKING);
     }
 
-    public BufferedImage getSprite(){
-        return SpriteEmpty.loadSprite();
+    public Sprite getSprite(){
+        return SpriteEmpty;
     }
 }

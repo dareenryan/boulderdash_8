@@ -1,17 +1,52 @@
 package model.allElements.mobileElem;
 
 
+import contract.IMobile;
+import model.Map;
 import model.allElements.Permeability;
 import model.allElements.Sprite;
-import model.allElements.SpriteSheetCutter;
 
-import java.awt.image.BufferedImage;
+public class Player extends MobileElem implements IMobile {
 
-public class Player extends MobileElem{
+    private static Sprite spritePlayer = new Sprite(3,0,"playerSprites.png");
 
-    private static Sprite spritePlayer = new Sprite(6,0,"playerSprites.jpg");
-    public Player() { super(spritePlayer, Permeability.BLOCKING); }
-    public BufferedImage getSprite(){
-        return spritePlayer.loadSprite();
+    private static Sprite spritePlayerR = new Sprite(1,2,"playerSprites.png");
+
+    private static Sprite spritePlayerL = new Sprite(1,4,"playerSprites.png");
+    private static Sprite spritePlayerU = new Sprite(0,2,"playerSprites.png");
+    private static Sprite spritePlayerD = new Sprite(0,4,"playerSprites.png");
+
+
+    public Player(final int x, final int y, final Map map) { super(spritePlayer, Permeability.BLOCKING, map, x, y); }
+
+    @Override
+    public Sprite getSprite(){
+        return spritePlayer;
+    }
+
+    @Override
+    public final void moveLeft() {
+        super.moveLeft();
+        this.setSprite(spritePlayerL);
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see fr.exia.insanevehicles.model.element.mobile.Mobile#moveRight()
+     */
+    @Override
+    public final void moveRight() {
+        super.moveRight();
+        this.setSprite(spritePlayerR);
+    }
+
+    public final void moveUp() {
+        super.moveUp();
+        this.setSprite(spritePlayerR);
+    }
+
+    public final void moveDown() {
+        super.moveDown();
+        this.setSprite(spritePlayerR);
     }
 }

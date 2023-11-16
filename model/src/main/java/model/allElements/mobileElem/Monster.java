@@ -1,14 +1,13 @@
 package model.allElements.mobileElem;
 
+import model.Map;
 import model.allElements.Permeability;
 import model.allElements.Sprite;
 
-import java.awt.image.BufferedImage;
-
 public class Monster extends MobileElem{
     private static Sprite spriteMonster = new Sprite(10,0,"mapSprites.png");
-    public Monster() { super(spriteMonster, Permeability.BLOCKING); }
-    public BufferedImage getSprite(){
-        return spriteMonster.loadSprite();
+    public Monster(final int x, final int y, final Map map) { super(spriteMonster, Permeability.BLOCKING, map, x, y ); }
+    public Sprite getSprite(){
+        return spriteMonster;
     }
 }

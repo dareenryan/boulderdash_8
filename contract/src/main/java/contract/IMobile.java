@@ -1,18 +1,7 @@
 package contract;
 
-import java.awt.Point;
 
-import fr.exia.showboard.IPawn;
-
-/**
- * <h1> The Interface IMobile.</h1>
- *
- * @author Group 8
- * @see IPawn
- * @see IElement
- */
-
-public interface IMobile extends IPawn, IElement{
+public interface IMobile {
 
     /**
      * Move up.
@@ -39,38 +28,5 @@ public interface IMobile extends IPawn, IElement{
      */
     void doNothing();
 
-    /**
-     * Gets the x.
-     */
-    @Override
-    int getX();
-
-    /**
-     * Gets the y.
-     *
-     * @return the y
-     */
-    @Override
-    int getY();
-
-    /**
-     * Checks if is alive.
-     *
-     * @return the alive
-     */
-    Boolean isAlive();
-
-    /**
-     * Checks if the car crashed.
-     *
-     * @return the boolean
-     */
-    Boolean isCrashed();
-
-    /*
-     * (non-Javadoc)
-     * @see fr.exia.showboard.IPawn#getPosition()
-     */
-    @Override
-    Point getPosition();
+    ISprite getSprite();
 }

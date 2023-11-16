@@ -12,16 +12,22 @@ public class Element {
     private Permeability permeability;
 
     public Element(final Sprite sprite, final Permeability permeability) {
+        this.setSprite(sprite);
         this.setPermeability(permeability);
     }
 
-
-    public void setSprite(Sprite sprite){
-        this.sprite = sprite;
-        System.out.println(this.sprite);
+    public Sprite getSprite(){
+        return this.sprite;
+    }
+    public Permeability getPermeability() {
+        return permeability;
     }
 
-    public void setPermeability(Permeability permeability){
+    protected void setSprite(Sprite sprite){
+        this.sprite = sprite;
+    }
+
+    protected void setPermeability(Permeability permeability){
         this.permeability = permeability;
     }
 }

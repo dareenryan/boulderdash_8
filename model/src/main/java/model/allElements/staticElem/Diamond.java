@@ -11,7 +11,7 @@ public class Diamond extends StaticElem{
     public Diamond() {
         super(SpriteDiamond, Permeability.BLOCKING);
     }
-    public BufferedImage getSprite(){
-        return SpriteDiamond.loadSprite();
+    public Sprite getSprite(){
+        return SpriteDiamond;
     }
 }

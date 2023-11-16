@@ -13,7 +13,7 @@ public class Sand extends StaticElem {
     public Sand() {
         super(SpriteSand, Permeability.BLOCKING);
     }
-    public BufferedImage getSprite(){
-        return SpriteSand.loadSprite();
+    public Sprite getSprite(){
+        return SpriteSand;
     }
 }

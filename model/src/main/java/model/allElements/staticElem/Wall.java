@@ -12,7 +12,7 @@ public class Wall extends StaticElem {
     public Wall() {
         super(SpriteWall, Permeability.BLOCKING);
     }
-    public BufferedImage getSprite(){
-        return SpriteWall.loadSprite();
+    public Sprite getSprite(){
+        return SpriteWall;
     }
 }

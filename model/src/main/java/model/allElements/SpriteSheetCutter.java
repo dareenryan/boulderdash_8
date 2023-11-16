@@ -26,8 +26,7 @@ public class SpriteSheetCutter {
     }
 
     public static BufferedImage getSprite(int xGrid, int yGrid, String file) {
-         System.out.println("file : " +file);
-            spriteSheet = loadSprite(file);
+         spriteSheet = loadSprite(file);
 
 //il faudrait voir la doc de getSubImage et de ses paramètres
 

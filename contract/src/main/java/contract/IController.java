@@ -15,12 +15,12 @@ public interface IController {
 	/**
 	 * Play.
 	 */
-	void play() throws InterruptedException;
+	//void play() throws InterruptedException;
 
 	/**
 	 * Gets the order performer.
 	 *
 	 * @return the order performer
 	 */
-	IOrderPerformer getOrderPerformer();
+	//IOrderPerformer getOrderPerformer();
 }

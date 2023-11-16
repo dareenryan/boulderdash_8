@@ -1,8 +1,8 @@
 package contract;
 
+import javax.lang.model.element.Element;
+import java.awt.image.BufferedImage;
 import java.util.Observable;
-
-import contract.IElement;
 
 /**
  * <h1> The Interface IMap.</h1>
@@ -36,7 +36,7 @@ public interface IMap {
      * @return the on the map XY
      */
 
-    IElement getOnTheMapXY(int x, int y);
+    Element[][] getOnTheMapXY(int x, int y);
 
     /**
      * Sets the mobile has changed
@@ -51,4 +51,6 @@ public interface IMap {
      */
 
     Observable getObservable();
+
+    BufferedImage[][] getSymbolonTheMap();
 }
