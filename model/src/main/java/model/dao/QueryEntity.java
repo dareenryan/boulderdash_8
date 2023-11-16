@@ -8,7 +8,7 @@ public abstract class QueryEntity {
 
     public static String getQueryInsert() {
         return "INSERT INTO \"map\" (\"width\", \"height\")" +
-                "VALUES (40,16);";
+                "VALUES (40,22);";
     }
 
     public static String getQuerySelectAll(){
