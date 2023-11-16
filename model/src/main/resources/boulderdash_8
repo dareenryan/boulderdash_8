@@ -1,0 +1,81 @@
+
+SET TIME ZONE 'UTC+00:00';
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données :  `boulderdash_8`
+--
+
+CREATE DATABASE boulderdash_8 ;
+create schema if not exists "public";
+set schema 'public';
+
+create domain id_size AS integer
+    check (length(CAST(value AS text)) between 1 and 2);
+create domain width_size AS integer
+    check (length(CAST(value AS text)) between 1 and 2);
+create domain height_size AS integer
+    check (length(CAST(value AS text)) between 1 and 2);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Map`
+--
+
+CREATE TABLE map(
+  id serial NOT NULL,
+  width width_size NOT NULL,
+  height height_size NOT NULL,
+  primary key (id)
+);
+
+-- --------------------------------------------------------
+
+-- Procédures
+--
+
+CREATE OR REPLACE PROCEDURE mapById (IN p_id INT)
+    LANGUAGE SQL EXTERNAL SECURITY INVOKER
+AS $$
+SELECT * FROM map WHERE id = p_id;
+$$;
+
+CREATE OR REPLACE PROCEDURE mapByWidth (IN p_width width_size)
+    LANGUAGE SQL EXTERNAL SECURITY INVOKER
+AS $$
+SELECT * FROM map where width=p_width;
+$$;
+
+CREATE OR REPLACE PROCEDURE mapByHeight (IN p_height height_size)
+    LANGUAGE SQL EXTERNAL SECURITY INVOKER
+AS $$
+SELECT * FROM map where height=p_height;
+$$;
+
+-- --------------------------------------------------------
+
+--
+-- Contenu de la table map
+--
+/*INSERT INTO map (width, height) VALUES
+(10, 18),
+(14, 16),
+(16, 14),
+(18, 10);*/
+
+
+-- Index pour les tables exportées
+
+--
+--ALTER TABLE map
+--ALTER COLUMN id TYPE smallserial USING id=5;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
