@@ -1,5 +1,10 @@
+
+<p align="center">
+  <img src="https://th.bing.com/th?id=OIP.Dmitddkwy4wfuoic-3ifqgD6D6&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.6&pid=3.1&rm=2" alt="Game Visual" width="400">
+</p>
+
 <h1 align="center"></br>BoulderDash</h1>
-<h3 align="center"></br>Groupe 8 X2027</h3>
+<h2 align="center"></br>Groupe 8 X2027</h2>
 <p align="center">
   Java Maven SQL - 5 ucac-icam's students Project - semester 1 2023/2024
 </p>
@@ -29,7 +34,4 @@ The goal of the game is to collect enough diamonds (12 here) to unlock the exit 
 3. Good game !
 
 ---
-## Game Visual
-<p align="center">
-  <img src="https://th.bing.com/th?id=OIP.Dmitddkwy4wfuoic-3ifqgD6D6&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.6&pid=3.1&rm=2" alt="Game Visual" width="400">
-</p>
+
