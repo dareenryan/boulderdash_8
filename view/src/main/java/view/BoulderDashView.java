@@ -15,31 +15,57 @@ import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
+/**
+ * <h1> The Class Boulder Dash View</h1>
+ *
+ * @author Group 8
+ */
 public class BoulderDashView extends JFrame implements IBoulderDashView, KeyListener {
 
+    /** The width. */
     private int width;
 
     /** The height. */
     private int height;
 
+    /** The map. */
     private IMap map;
 
+    /** The player. */
     private IMobile player;
 
-    /** The on the road. */
+    /** The on the map. */
     private Element[][] onTheMap;
 
+    /** The labels. */
     private JLabel[][] labels;
 
+    /**
+     * Instantiates a new Boulder Dash View.
+     * @param map
+     *  the map
+     * @throws InterruptedException
+     *  Signals that an Interrupted exception has occurred.
+     */
     public BoulderDashView(IMap map) throws InterruptedException {
         this.setMap(map);
         this.player = this.map.getPlayer();
     }
 
+    /**
+     * Sets the map
+     * @param map
+     *  the map
+     */
     public void setMap(IMap map) {
         this.map = map;
     }
 
+    /**
+     * Sets the player
+     * @param player
+     *  the player
+     */
     public void setPlayer(IMobile player) {
         this.player = player;
     }
@@ -55,6 +81,14 @@ public class BoulderDashView extends JFrame implements IBoulderDashView, KeyList
         return map;
     }
 
+    /**
+     * Loads the map panel
+     * @return panel
+     * @throws InterruptedException
+     *  Signals that an Interrupted Exception has occured
+     * @throws IOException
+     *  Signals that an I/O Exception has occured
+     */
     public JPanel loadMapPanel() throws InterruptedException, IOException {
         JPanel panel = new JPanel();
         BufferedImage[][] map_arr = this.map.getSymbolonTheMap();
@@ -94,6 +128,10 @@ public class BoulderDashView extends JFrame implements IBoulderDashView, KeyList
         window.pack();
     }
 
+    /**
+     * Handles Key Pressed
+     * @param e
+     */
     private void handleKeyPressed(KeyEvent e) {
         // Gérez les actions en fonction de la touche enfoncée
         int keyCode = e.getKeyCode();
@@ -141,7 +179,18 @@ public class BoulderDashView extends JFrame implements IBoulderDashView, KeyList
 
     @Override
     public final int getWidth(){return this.width;}
+
+    /**
+     * Sets the width
+     * @param width
+     *  the width
+     */
     private void setWidth(final int width){this.width = width;}
+
+    /**
+     *
+     * @param height
+     */
     private void setHeight(final int height){this.height = height;}
     @Override
     public final int getHeight(){return this.height;}

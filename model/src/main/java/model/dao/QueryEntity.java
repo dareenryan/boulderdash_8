@@ -6,6 +6,10 @@ package model.dao;
  */
 public abstract class QueryEntity {
 
+    /**
+     * Gets the sql query
+     * @return sql query
+     */
     public static String getQueryInsert() {
         return "INSERT INTO \"map\" (\"width\", \"height\")" +
                 "VALUES (40,22);";

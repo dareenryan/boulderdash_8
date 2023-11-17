@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"contract"},{"l":"controller"},{"l":"main"},{"l":"model"},{"l":"model.allElements"},{"l":"model.allElements.mobileElem"},{"l":"model.allElements.staticElem"},{"l":"model.dao"},{"l":"view"}];updateSearchResults();

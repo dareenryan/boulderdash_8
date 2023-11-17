@@ -13,42 +13,104 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Observable;
 
-/*
-    pour lire les fichiers de map txt et effectuer les correspondances
-*/
+/**
+ * <h1> The Class Map</h1>
+ *
+ * @author Group 8
+ */
 public class Map extends Observable implements IMap {
+
+    /** The width. */
     private int width;
+
+    /** The height. */
     private int height;
 
+    /** The map file. */
     private String FileMap;
 
+    /** The symbols on the map. */
     private BufferedImage[][] SymbolonTheMap;
 
+    /** The player. */
     private Player player;
 
+    /**
+     * Gets the player
+     * @return player
+     */
     public Player getPlayer() {
         return player;
     }
 
+    /**
+     * Sets the width
+     * @param width
+     *  the width
+     */
     public void setWidth(int width) { this.width = width; }
+
+    /**
+     * Gets the width
+     * @return width
+     */
     public int getWidth() { return width; }
+
+    /**
+     * Sets the height
+     * @param height
+     *  the height
+     */
     public void setHeight(int height) { this.height = height; }
+
+    /**
+     * Gets the height
+     * @return height
+     */
     public  int getHeight() { return height; }
 
+    /**
+     *
+     * @param x
+     *  the x
+     * @param y
+     *  the y
+     *
+     * @return Element[][]
+     */
     @Override
     public Element[][] getOnTheMapXY(int x, int y) {
         return new Element[0][];
     }
 
+    /**
+     * Gets each unique icon on the map
+     * @return SymbolonTheMap
+     */
     public BufferedImage[][] getSymbolonTheMap(){
         return SymbolonTheMap;
     }
 
+    /**
+     * Instantiates a new Map
+     * @param file
+     * the file
+     * @throws IOException
+     * Signals that an I/O exception has occurred.
+     */
     public Map(String file) throws IOException {
         this.FileMap = file;
         this.SymbolonTheMap = loadMap(this.FileMap);
     }
 
+    /**
+     *
+     * @param file
+     * the file
+     * @return Element
+     * @throws IOException
+     * Signals that an I/O exception has occurred.
+     */
     public BufferedImage[][] loadMap(String file) throws IOException {
         final BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
         String line;
@@ -71,6 +133,17 @@ public class Map extends Observable implements IMap {
         buffer.close();
         return Element;
     }
+
+    /**
+     *
+     * @param fchar
+     *  the fchar
+     * @param x
+     *  the x
+     * @param y
+     *  the y
+     * @return accSprite
+     */
     public BufferedImage charToSprite(char fchar, int x, int y){
         BufferedImage accSprite = null;
         switch(fchar){

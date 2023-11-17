@@ -15,5 +15,8 @@ public interface IView {
 	 */
 	void printMessage(final String message);
 
+	/**
+	 * Follows the player
+	 */
 	void followMyPlayer();
 }

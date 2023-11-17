@@ -38,6 +38,7 @@ public class DBConnection {
         return true;
     }
 
+    /** The method closing the connection to the database. */
     public void close() {System.out.println("Connection Stopped");}
 
     private int executeUpdate(String query){
@@ -53,10 +54,7 @@ public class DBConnection {
         return rowAffected;
     }
 
-    public ResultSet executeQuery(String query){
-        return null;
-    }
-
+    /** The method entering values in the database. */
     public void insertEntity(){
         open();
         executeUpdate(QueryEntity.getQueryInsert());
@@ -69,10 +67,11 @@ public class DBConnection {
     public void selectEntity(){
         try {
             open();
-            String query = "CALL mapById(5)";
+            String query = "CALL mapById(1)";
             stmt = connection.prepareCall(query);
-            //stmt.setInt(index, value);
+            //stmt.setInt(0, 1);
             stmt.execute();
+            //stmt.getInt(0);
             System.out.println("Procedure executed succesfully");
             close();
         } catch (SQLException e){
@@ -88,4 +87,17 @@ public class DBConnection {
             }
         }
     }
+
+    /*public void selectEntity2(){
+        try{
+        statement = this.connection.prepareCall("{call mapbyid()}");
+        ResultSet rs = statement.execute();
+
+        while (rs.next()){
+            System.out.println(rs.getInt("id"));
+        }
+    }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }*/
 }
