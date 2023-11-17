@@ -10,9 +10,11 @@
         <module name="main" />
         <module name="model" />
         <module name="view" />
-        <module name="entity" />
         <module name="contract" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="entity" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>

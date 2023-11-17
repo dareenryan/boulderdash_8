@@ -2,6 +2,9 @@ package contract;
 
 import java.awt.*;
 
+/**
+ * The Interface IMobile
+ */
 
 public interface IMobile {
 
@@ -25,7 +28,15 @@ public interface IMobile {
      */
     void moveRight();
 
+    /**
+     *
+     * @return the sprite
+     */
     ISprite getSprite();
 
+    /**
+     *
+     * @return the position
+     */
     Point getPosition();
 }

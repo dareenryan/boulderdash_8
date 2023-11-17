@@ -18,6 +18,5 @@
 		<module>controller</module>
 		<module>contract</module>
 		<module>model</module>
-		<module>entity</module>
 	</modules>
 </project>

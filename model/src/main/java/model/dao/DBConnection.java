@@ -27,8 +27,8 @@ public class DBConnection {
     public Boolean open() {
         try{
             Class.forName("org.postgresql.Driver");
-            connection = DriverManager.getConnection(URL,LOGIN,PASSWORD);
-            statement = connection.createStatement();
+            this.connection = DriverManager.getConnection(URL,LOGIN,PASSWORD);
+            this.statement = this.connection.createStatement();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -38,14 +38,15 @@ public class DBConnection {
         return true;
     }
 
+    /** The method closing the connection to the database. */
     public void close() {System.out.println("Connection Stopped");}
 
     private int executeUpdate(String query){
         int rowAffected = 0;
         try {
-            Statement statement = connection.createStatement();
+            Statement statement = this.connection.createStatement();
 
-            rowAffected = statement.executeUpdate(query);
+            rowAffected = this.statement.executeUpdate(query);
         }
         catch(SQLException e){
             e.printStackTrace();
@@ -53,26 +54,24 @@ public class DBConnection {
         return rowAffected;
     }
 
-    public ResultSet executeQuery(String query){
-        return null;
-    }
-
+    /** The method entering values in the database. */
     public void insertEntity(){
-        this.open();
-        this.executeUpdate(QueryEntity.getQueryInsert());
-        this.executeUpdate(QueryEntity.getQueryInsert());
-        this.executeUpdate(QueryEntity.getQueryInsert());
-        this.executeUpdate(QueryEntity.getQueryInsert());
-        this.close();
+        open();
+        executeUpdate(QueryEntity.getQueryInsert());
+        executeUpdate(QueryEntity.getQueryInsert());
+        executeUpdate(QueryEntity.getQueryInsert());
+        executeUpdate(QueryEntity.getQueryInsert());
+        close();
     }
 
     public void selectEntity(){
         try {
             open();
-            String query = "CALL mapById(5)";
+            String query = "CALL mapById(1)";
             stmt = connection.prepareCall(query);
-            //stmt.setInt(index, value);
+            //stmt.setInt(0, 1);
             stmt.execute();
+            //stmt.getInt(0);
             System.out.println("Procedure executed succesfully");
             close();
         } catch (SQLException e){
@@ -88,4 +87,17 @@ public class DBConnection {
             }
         }
     }
+
+    /*public void selectEntity2(){
+        try{
+        statement = this.connection.prepareCall("{call mapbyid()}");
+        ResultSet rs = statement.execute();
+
+        while (rs.next()){
+            System.out.println(rs.getInt("id"));
+        }
+    }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }*/
 }

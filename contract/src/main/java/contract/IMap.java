@@ -52,7 +52,15 @@ public interface IMap {
 
     Observable getObservable();
 
+    /**
+     *
+     * @return the symbol on the map
+     */
     BufferedImage[][] getSymbolonTheMap();
 
+    /**
+     *
+     * @returnnthe player
+     */
     IMobile getPlayer();
 }

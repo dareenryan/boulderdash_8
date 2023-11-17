@@ -9,12 +9,30 @@ import java.io.IOException;
  * @author Group 8
  */
 public interface IBoulderDashView {
+
+    /**
+     *
+     * @return the player
+     */
     IMobile getPlayer();
 
+    /**
+     *
+     * @return the map
+     */
     IMap getMap();
 
+    /**
+     *
+     * @return the width
+     */
     int getWidth();
 
+    /**
+     *
+     * @throws IOException
+     * @throws InterruptedException
+     */
     default void runView() throws IOException, InterruptedException {}
     
 }
