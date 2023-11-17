@@ -37,6 +37,7 @@ public abstract class Main {
 
         //DBConnection db = new DBConnection();
         //db.insertEntity();
+        BoulderDashController.music();
 
         view.runView();
     }
