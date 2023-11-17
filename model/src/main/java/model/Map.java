@@ -122,9 +122,7 @@ public class Map extends Observable implements IMap {
         int y = 0;
         while (line != null ) {
             for (int x = 0; x <= line.length()-1; x++) {
-                System.out.println("X = " + x);
                 char c = line.toCharArray()[x];
-                System.out.println("y =" + y);
                 BufferedImage elem = charToSprite(c, x, y);
                 Element[x][y] = elem;
             }

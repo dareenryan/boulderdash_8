@@ -14,6 +14,7 @@ import model.dao.DBConnection;
 import view.BoulderDashView;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * The Class Main.
@@ -30,15 +31,22 @@ public abstract class Main {
      * @throws InterruptedException the interrupted exception
      */
     public static void main(final String[] args) throws IOException, InterruptedException {
-        final BoulderDashModel model = new BoulderDashModel("maps_txt/MAP1.txt");
-        final BoulderDashView view = new BoulderDashView(BoulderDashModel.getMap());
-        //final IBoulderDashController controller = new BoulderDashController(view, model);
-        //view.setOrderPerformer(controller.getOrderPerformer());
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("selectionnez un niveau entre 1 et 5 : ");
 
+        while(!scanner.hasNext()){
+            System.out.println("choisissez un niveau valide...");
+            scanner.next();
+            System.out.println("selectionnez un niveau entre 1 et 5 : ");
+        }
+        int niv = scanner.nextInt();
+        final BoulderDashModel model = new BoulderDashModel("maps_txt/MAP" +niv+".txt");
+        final BoulderDashView view = new BoulderDashView(BoulderDashModel.getMap());
+        final IBoulderDashController controller = new BoulderDashController(view, model);
+        ((BoulderDashController) controller).play();
         //DBConnection db = new DBConnection();
         //db.insertEntity();
         BoulderDashController.music();
 
-        view.runView();
     }
 }

@@ -95,14 +95,11 @@ public class BoulderDashView extends JFrame implements IBoulderDashView, KeyList
         JPanel panel = new JPanel();
         BufferedImage[][] map_arr = this.map.getSymbolonTheMap();
         labels = new JLabel[40][22];
-        System.out.println("yo");
 
         for(int y = 0; y <= 21; y++){
-            System.out.println("yo2");
             for(int x = 0; x <= 39; x++){
                 BufferedImage img = map_arr[x][y];
                 if(img != null){
-                    System.out.println(x + " " + y);
                     JLabel tile = new JLabel(new ImageIcon(img));
                     labels[x][y] = tile;
                     panel.add(labels[x][y]);
@@ -153,7 +150,6 @@ public class BoulderDashView extends JFrame implements IBoulderDashView, KeyList
                 NextNextIcon =(ImageIcon) labels[newX+1][newY].getIcon();
                 NextNextImage = NextNextIcon.getImage();
                 if (NextIconImg.equals(new Wall().getSprite().getSymbol())) {
-                    System.out.println("mince");
                 }else if(NextIconImg.equals(new Rock().getSprite().getSymbol())){
                     if(NextIconImg.equals(new Rock().getSprite().getSymbol()) && NextNextImage.equals(new Wall().getSprite().getSymbol())){
                         System.out.println("bloqué");
@@ -178,10 +174,8 @@ public class BoulderDashView extends JFrame implements IBoulderDashView, KeyList
                 NextNextIcon =(ImageIcon) labels[newX-1][newY].getIcon();
                 NextNextImage = NextNextIcon.getImage();
                 if (NextIconImg.equals(new Wall().getSprite().getSymbol())) {
-                    System.out.println("mince");
                 }else if(NextIconImg.equals(new Rock().getSprite().getSymbol())){
                     if(NextIconImg.equals(new Rock().getSprite().getSymbol()) && NextNextImage.equals(new Wall().getSprite().getSymbol())){
-                        System.out.println("bloqué");
                     }else{
                         labels[newX-1][newY].setIcon(ti);
                         labels[newX][newY].setIcon(pi);
@@ -263,13 +257,11 @@ public class BoulderDashView extends JFrame implements IBoulderDashView, KeyList
 
     @Override
     public void keyPressed(KeyEvent e) {
-        System.out.println("Key Pressed: " + e.getKeyChar());
         handleKeyPressed(e);
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        System.out.println("Key Pressed: " + e.getKeyChar());
         //handleKeyPressed(e);
     }
 }

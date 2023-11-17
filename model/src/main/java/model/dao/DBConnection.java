@@ -27,8 +27,8 @@ public class DBConnection {
     public Boolean open() {
         try{
             Class.forName("org.postgresql.Driver");
-            this.connection = DriverManager.getConnection(URL,LOGIN,PASSWORD);
-            this.statement = this.connection.createStatement();
+            connection = DriverManager.getConnection(URL,LOGIN,PASSWORD);
+            statement = connection.createStatement();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -44,9 +44,9 @@ public class DBConnection {
     private int executeUpdate(String query){
         int rowAffected = 0;
         try {
-            Statement statement = this.connection.createStatement();
+            Statement statement = connection.createStatement();
 
-            rowAffected = this.statement.executeUpdate(query);
+            rowAffected = statement.executeUpdate(query);
         }
         catch(SQLException e){
             e.printStackTrace();

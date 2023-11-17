@@ -66,7 +66,7 @@ public class BoulderDashController implements IBoulderDashController {
     }
     public static void music(){
         try{
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream((new File("Le-Car-Qui-Part-Audio-Officiel.wav")));
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream((new File("Dragon-ball-Z-soundtrack-3.wav")));
             Clip gamemusic = AudioSystem.getClip();
             gamemusic.open(audioInputStream);
             gamemusic.loop(Clip.LOOP_CONTINUOUSLY);
