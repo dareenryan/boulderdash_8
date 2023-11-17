@@ -34,6 +34,7 @@ public class Map extends Observable implements IMap {
 
     /** The player. */
     private Player player;
+    private Monster monster;
 
     /**
      * Gets the player
@@ -171,6 +172,12 @@ public class Map extends Observable implements IMap {
                 accSprite = this.player.getSprite().getSymbol();
                 this.player.setX(x);
                 this.player.setY(y);
+            case 'S':
+                this.monster = new Monster(0,0);
+                accSprite = this.monster.getSprite().getSymbol();
+                this.player.setX(x);
+                this.player.setY(y);
+                
         }
         return accSprite;
     }
